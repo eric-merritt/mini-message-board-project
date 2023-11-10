@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  .messageBoard
+    for message in messages 
+      .message 
+        .message_name #{message.user}
+        .message_text #{message.text}
+  form(action="/new" method="get")
+    input(type="submit" value="New Message")
+  
